@@ -26,7 +26,7 @@ const getPlayers = async () => {
         // console.log(b[1]);
         return b[2] - a[2]
     })
-    console.log(sortPlayers.value);
+    // console.log(sortPlayers.value);
     // players.value.sort()
 
 }
@@ -34,7 +34,7 @@ const getPlayers = async () => {
 
 onBeforeMount(async () => {
     await getPlayers()
-    console.log(players.value);
+    // console.log(players.value);
 })
 </script>
  

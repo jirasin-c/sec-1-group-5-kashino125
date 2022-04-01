@@ -2,17 +2,16 @@
 import { ref, onBeforeMount } from 'vue'
 import { useRouter } from 'vue-router';
 import { user } from '../../data/user';
-import AppLogin from '../components/AppLogin.vue';
+import AppSignin from '../components/AppSignin.vue';
 const appRouter = useRouter()
 const closeModal = () => {
-    appRouter.push({ name: 'Home' })
+    // appRouter.push({ name: 'Home' })
+    appRouter.go(-1)
 }
 const accounts = ref()
-// const userName = ref()
-// const passWord = ref()
 const isInCorrect = ref(false)
-// const currUser = ref()
 
+//GET method
 const getUser = async () => {
     const res = await fetch('http://localhost:5000/accounts')
     accounts.value = await res.json()
@@ -23,7 +22,7 @@ onBeforeMount(async () => {
     await getUser()
 })
 
-const login = async (e) => {
+const signIn = (signIn) => {
     // console.log(e);
     // console.log(e.ac);
     // console.log(accounts.value);
@@ -57,31 +56,55 @@ const login = async (e) => {
     //     }
 
     // }
-    for (let index = 0; index < accounts.value.length; index++) {
-        const ac = accounts.value[index];
-        if (ac.userName === e.username) {
-            // console.log('username correct');
-            // isInCorrect.value = true
-            if (ac.passWord === e.password) {
-                // console.log('password correct');
-                // console.log('login pass');
+    accounts.value.filter((current) => {
+        if (current.userName === signIn.username) {
+            if (current.passWord === signIn.password) {
                 isInCorrect.value = false
                 // currUser.value = ac.name
-                user.setUserName(ac.name)
-                user.setStatus()
+                user.setLoginUserId(current.id)
+                user.setLoginUserName(current.name)
+                user.setLoginStatus()
+                // user.setUserName(ac.name)
+                // user.setStatus()
                 // console.log(user.statusUser); 
                 // console.log(user.userName);
                 closeModal()
             } else {
-                // console.log('password incorrect');
                 isInCorrect.value = true
             }
-
         } else {
-            // console.log('username incorrect');
             isInCorrect.value = true
         }
     }
+    );
+    // for (let index = 0; index < accounts.value.length; index++) {
+    //     const check = accounts.value[index];
+    //     if (check.userName === signIn.username) {
+    //         // console.log('username correct');
+    //         // isInCorrect.value = true
+    //         if (check.passWord === signIn.password) {
+    //             // console.log('password correct');
+    //             // console.log('login pass');
+    //             isInCorrect.value = false
+    //             // currUser.value = ac.name
+    //             user.setLoginUserId(check.id)
+    //             user.setLoginUserName(check.name)
+    //             user.setLoginStatus()
+    //             // user.setUserName(ac.name)
+    //             // user.setStatus()
+    //             // console.log(user.statusUser); 
+    //             // console.log(user.userName);
+    //             closeModal()
+    //         } else {
+    //             // console.log('password incorrect');
+    //             isInCorrect.value = true
+    //         }
+
+    //     } else {
+    //         // console.log('username incorrect');
+    //         isInCorrect.value = true
+    //     }
+    // }
     // for (let index = 0; index < accounts.value.length; index++) {
     //     const ac = accounts.value[index];
     //     if (ac.userName === userName.value) {
@@ -203,40 +226,8 @@ const login = async (e) => {
         </div>
     </div>-->
     <div>
-        <AppLogin :vueUserStatus="isInCorrect" @closeModal="closeModal" @login="login" />
+        <AppSignin :vueUserStatus="isInCorrect" @closeModal="closeModal" @signIn="signIn" />
     </div>
 </template>
 <style scoped>
-/* .modal-mask {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: table;
-    transition: opacity 0.3s ease;
-}
-.modal-wrapper {
-    display: table-cell;
-    vertical-align: middle;
-}
-.modal-container {
-    width: 400px;
-    margin: 0px auto;
-    padding: 20px 30px;
-    background-color: rgb(55 65 81);
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-}
-.modal-body h3 {
-    margin-top: 0;
-    color: white;
-}
-.modal-button {
-    display: flex;
-    justify-content: flex-end;
-    color: white;
-} */
 </style>

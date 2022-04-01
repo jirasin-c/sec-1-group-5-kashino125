@@ -1,72 +1,86 @@
 <script setup>
 import { ref, computed, onBeforeMount } from 'vue'
 
-defineEmits(['closeModal', 'login'])
+
+defineEmits(['closeModal', 'signUp', 'goBack'])
 const props = defineProps({
-    // vueAccounts: {
-    //     type: Object,
-    //     require: true
-    // },
-    vueUserStatus: {
+    vuePassStatus: {
+        type: Boolean,
+        require: true
+    },
+    vueUserUsed: {
         type: Boolean,
         require: true
     }
 })
-
-
-// const curAcc = computed(async () => {
-//     return await { id: props.vueAccounts.id, userName: props.vueAccounts.id, passWord: props.vueAccounts.passWord, name: props.vueAccounts.name, points: props.vueAccounts.points }
-// })
-console.log(props.vueAccounts);
-// console.log(curAcc.value);
-
-// const getUser = async () => {
-//     const res = await fetch('http://localhost:5000/accounts')
-//     accounts.value = await res.json()
-//     console.log(accounts.value);
-// }
-
-// onBeforeMount(async () => {
-//     await getUser()
-// })
-
-// const accounts = ref()
+const disName = ref()
 const userName = ref()
 const passWord = ref()
+const confirmPassWord = ref()
 const isInCorrect = computed(() => {
-    return props.vueUserStatus
+    return props.vuePassStatus
 })
-
-// console.log(isInCorrect.value);
-// const currUser = ref()
-
+const userUsed = computed(() => {
+    return props.vueUserUsed
+})
 </script>
  
 <template>
-    <h1>login</h1>
     <div class="modal-mask">
         <div class="modal-wrapper">
             <div class="modal-container">
                 <div class="modal-body">
+                    <button>
+                        <span class="flex text-white mb-2" @click="$emit('goBack', $event)">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                                xml:space="preserve"
+                                enable-background="new 0 0 512 512"
+                                heigh="24"
+                                width="24"
+                            >
+                                <path
+                                    d="M352 128.4 319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"
+                                    fill="#ffffff"
+                                    class="fill-000000"
+                                />
+                            </svg>
+                        </span>
+                    </button>
                     <h3
                         class="text-xl font-medium text-gray-900 dark:text-white mb-5"
-                    >Sign in to Kashino125</h3>
+                    >Sign up to Kashino125</h3>
                     <div class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8">
                         <!-- <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"> -->
                         <div>
                             <label
-                                for="name"
+                                for="disname"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Display name</label>
+                            <input
+                                type="text"
+                                name="disname"
+                                id="disname"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                placeholder="username"
+                                required
+                                v-model="disName"
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="username"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                             >User name</label>
                             <input
-                                type="name"
-                                name="name"
-                                id="name"
+                                type="text"
+                                name="username"
+                                id="username"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 placeholder="username"
                                 required
                                 v-model="userName"
-                                @keydown.enter="$emit('login', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })"
                             />
                         </div>
                         <div>
@@ -82,47 +96,32 @@ const isInCorrect = computed(() => {
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 required
                                 v-model="passWord"
-                                @keydown.enter="$emit('login', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })"
                             />
                         </div>
-                        <!-- <div class="flex justify-between">
-                            <div class="flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input
-                                        id="remember"
-                                        aria-describedby="remember"
-                                        type="checkbox"
-                                        class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                                        required
-                                    />
-                                </div>
-                                <div class="ml-3 text-sm">
-                                    <label
-                                        for="remember"
-                                        class="font-medium text-gray-900 dark:text-gray-300"
-                                    >Remember me</label>
-                                </div>
-                            </div>
-                            <a
-                                href="#"
-                                class="text-sm text-blue-700 hover:underline dark:text-blue-500 flex items-end"
-                            >Lost Password?</a>
-                        </div>-->
+                        <div>
+                            <label
+                                for="repassword"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >Confirm Password</label>
+                            <input
+                                type="password"
+                                name="repassword"
+                                id="repassword"
+                                placeholder="••••••••"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                required
+                                v-model="confirmPassWord"
+                            />
+                        </div>
                         <button
                             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                            @click="$emit('login', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })"
-                        >Login</button>
+                            @click="$emit('signUp', { name: disName, username: userName, password: passWord, confirmPass: confirmPassWord })"
+                        >Create account</button>
                         <p
                             class="text-red-500 animate-bounce"
                             v-if="isInCorrect"
-                        >Username or password are incorrect</p>
-                        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Not registered?
-                            <a
-                                href="#"
-                                class="text-blue-700 hover:underline dark:text-blue-500"
-                            >Create account</a>
-                        </div>
+                        >Password are unmatched</p>
+                        <p class="text-red-500 animate-bounce" v-if="userUsed">Username already used</p>
                         <!-- </form> -->
                     </div>
                 </div>
@@ -167,4 +166,4 @@ const isInCorrect = computed(() => {
     justify-content: flex-end;
     color: white;
 }
-</style>
+</style>y

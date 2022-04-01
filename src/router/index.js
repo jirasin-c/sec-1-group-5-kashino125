@@ -2,7 +2,9 @@ import {createRouter,createWebHistory} from 'vue-router'
 import Home from '../views/Home.vue'
 import Pokdeng from '../views/Pokdeng.vue'
 import Leaderboard from '../views/Leaderboard.vue'
-import Login from '../views/Login.vue'
+import Signin from '../views/Signin.vue'
+import Signout from '../views/Signout.vue'
+import Signup from '../views/Signup.vue'
 const history = createWebHistory()
 const routes = [
     {
@@ -21,9 +23,19 @@ const routes = [
         component: Leaderboard
     },
     {
-        path: '/login',
-        name: 'Login',
-        component: Login
+        path: '/sign-in',
+        name: 'Signin',
+        component: Signin
+    },
+    {
+        path: '/sign-out',
+        name: 'Signout',
+        component: Signout
+    },
+    {
+        path: '/sign-up',
+        name: 'Signup',
+        component: Signup
     }
 ]
 const router = createRouter({history,routes})
