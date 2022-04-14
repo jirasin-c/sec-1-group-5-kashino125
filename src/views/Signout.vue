@@ -8,9 +8,10 @@ const closeModal = () => {
     // appRouter.push({ name: 'Home' })
     appRouter.go(-1)
 }
+user.setLogoutStatus()
 user.setLogoutUserId
 user.setLoginUserName()
-user.setLogoutStatus()
+user.setLogoutUserPoint()
 closeModal()
 </script>
  

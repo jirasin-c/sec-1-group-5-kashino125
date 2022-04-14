@@ -1,9 +1,10 @@
 <script setup>
 import { ref } from 'vue';
 import { pok } from '../../../data/pokdeng.js';
+import { user } from '../../../data/user.js';
 
 const card = ref([])
-const number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"]
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 const type = ["spades", "hearts", "diamonds", "clubs"]
 const randomobj = () => {
     let rannumber = Math.floor(Math.random() * number.length);
@@ -29,6 +30,7 @@ const randomobj = () => {
 }
 const startToPlay = () => {
     randomobj()
+    user.userPoint -= 100
     pok.setStatus(true)
     pok.setBot(card.value.slice(0, 3))
     pok.setPlayer(card.value.slice(3))
@@ -48,6 +50,22 @@ const reset = () => {
     pok.reStart()
     card.value = []
 }
+const endTurn = () => {
+    console.log(pok.playerCard);
+    pok.playerCard.filter((card) => {
+        if (card.Numbers == 10) {
+            console.log('jack');
+        }
+        if (card.Numbers == 11) {
+            console.log('queen');
+        }
+        if (card.Numbers == 12) {
+            console.log('king');
+        }
+
+    })
+    alert('end')
+}
 </script>
  
 <template>
@@ -58,11 +76,13 @@ const reset = () => {
             :disabled="pok.statusStart">Start</button>
         <button
             class="hover:scale-110 rounded-2xl px-8 py-2 text-white text-xl bg-gradient-to-r bg-gradient-to-r from-cyan-500 to-blue-500 duration-300"
-            v-on:click="draw()" :class="{ 'opacity-25 cursor-not-allowed': pok.draw }"
-            :disabled="pok.draw">Draw</button>
+            v-on:click="draw()" :class="{ 'opacity-25 cursor-not-allowed': !pok.statusStart }"
+            :disabled="!pok.statusStart">Draw</button>
         <button
             class="hover:scale-110 rounded-2xl px-8 py-2 text-white text-xl bg-gradient-to-r bg-gradient-to-r from-cyan-500 to-blue-500 duration-300"
-            v-on:click="startToPlay()" :class="{ 'disabled:opacity-50': !pok.statusStart }">End Turn</button>
+            v-on:click="endTurn()" :class="{ 'opacity-25 cursor-not-allowed': !pok.statusStart }"
+            :disabled="!pok.statusStart">End
+            Turn</button>
         <button
             class="hover:scale-110 rounded-2xl px-8 py-2 text-white text-xl bg-gradient-to-r bg-gradient-to-r from-cyan-500 to-blue-500 duration-300"
             v-on:click="reset()" :style="{ 'disabled:opacity-50': !pok.statusStart }">Restart</button>

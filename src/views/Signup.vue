@@ -82,7 +82,7 @@ const signUp = async (signUp) => {
                 })
             })
             if (res.status === 201) {
-                signIn(signUp.name)
+                signIn(signUp)
                 closeModal()
                 console.log("added");
             } else {
@@ -91,9 +91,11 @@ const signUp = async (signUp) => {
         }
     }
 }
-const signIn = (name) => {
+const signIn = (signUp) => {
     user.setLoginStatus()
-    user.setLoginUserName(name)
+    user.setLoginUserId(signUp.id)
+    user.setLoginUserName(signUp.name)
+    user.setLoginUserPoint(signUp.points)
 }
 
 
@@ -101,13 +103,8 @@ const signIn = (name) => {
 </script>
  
 <template>
-    <AppSignup
-        :vuePassStatus="isInCorrect"
-        :vueUserUsed="userUsed"
-        @closeModal="closeModal"
-        @signUp="signUp"
-        @goBack="goBack"
-    />
+    <AppSignup :vuePassStatus="isInCorrect" :vueUserUsed="userUsed" @closeModal="closeModal" @signUp="signUp"
+        @goBack="goBack" />
 </template>
  
 <style>

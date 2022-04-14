@@ -61,9 +61,10 @@ const signIn = (signIn) => {
             if (current.passWord === signIn.password) {
                 isInCorrect.value = false
                 // currUser.value = ac.name
+                user.setLoginStatus()
                 user.setLoginUserId(current.id)
                 user.setLoginUserName(current.name)
-                user.setLoginStatus()
+                user.setLoginUserPoint(current.points)
                 // user.setUserName(ac.name)
                 // user.setStatus()
                 // console.log(user.statusUser); 

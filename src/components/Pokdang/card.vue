@@ -3,7 +3,7 @@ import { computed, reactive, ref } from 'vue';
 import { pok } from '../../../data/pokdeng';
 const prop = defineProps({
     t: String,
-    n: String,
+    n: Number,
     showw: Boolean,
 })
 const active = ref(false)

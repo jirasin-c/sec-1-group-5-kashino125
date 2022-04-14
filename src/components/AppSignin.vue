@@ -47,42 +47,25 @@ const isInCorrect = computed(() => {
         <div class="modal-wrapper">
             <div class="modal-container">
                 <div class="modal-body">
-                    <h3
-                        class="text-xl font-medium text-gray-900 dark:text-white mb-5"
-                    >Sign in to Kashino125</h3>
+                    <h3 class="text-xl font-medium text-gray-900 dark:text-white mb-5">Sign in to Kashino125</h3>
                     <div class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8">
                         <!-- <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"> -->
                         <div>
-                            <label
-                                for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                            >User name</label>
-                            <input
-                                type="text"
-                                name="name"
-                                id="name"
+                            <label for="name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">User
+                                name</label>
+                            <input type="text" name="name" id="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="username"
-                                required
-                                v-model="userName"
-                                @keydown.enter="$emit('signIn', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })"
-                            />
+                                placeholder="username" required v-model="userName"
+                                @keydown.enter="$emit('signIn', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })" />
                         </div>
                         <div>
-                            <label
-                                for="password"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                            >Password</label>
-                            <input
-                                type="password"
-                                name="password"
-                                id="password"
-                                placeholder="••••••••"
+                            <label for="password"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                required
-                                v-model="passWord"
-                                @keydown.enter="$emit('signIn', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })"
-                            />
+                                required v-model="passWord"
+                                @keydown.enter="$emit('signIn', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })" />
                         </div>
                         <!-- <div class="flex justify-between">
                             <div class="flex items-start">
@@ -109,18 +92,13 @@ const isInCorrect = computed(() => {
                         </div>-->
                         <button
                             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                            @click="$emit('signIn', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })"
-                        >Sign in</button>
-                        <p
-                            class="text-red-500 animate-bounce"
-                            v-if="isInCorrect"
-                        >Username or password are incorrect</p>
+                            @click="$emit('signIn', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })">Sign
+                            in</button>
+                        <p class="text-red-500 animate-bounce" v-if="isInCorrect">Username or password are incorrect</p>
                         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
                             Not registered?
-                            <router-link
-                                :to="{ name: 'Signup' }"
-                                class="text-blue-700 hover:underline dark:text-blue-500"
-                            >Create account</router-link>
+                            <router-link :to="{ name: 'Signup' }"
+                                class="text-blue-700 hover:underline dark:text-blue-500">Create account</router-link>
                         </div>
                         <!-- </form> -->
                     </div>
@@ -145,10 +123,12 @@ const isInCorrect = computed(() => {
     display: table;
     transition: opacity 0.3s ease;
 }
+
 .modal-wrapper {
     display: table-cell;
     vertical-align: middle;
 }
+
 .modal-container {
     width: 400px;
     margin: 0px auto;
@@ -157,10 +137,12 @@ const isInCorrect = computed(() => {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
 }
+
 .modal-body h3 {
     margin-top: 0;
     color: white;
 }
+
 .modal-button {
     display: flex;
     justify-content: flex-end;
