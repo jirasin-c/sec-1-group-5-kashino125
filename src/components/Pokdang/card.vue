@@ -3,7 +3,7 @@ import { computed, reactive, ref } from 'vue';
 import { pok } from '../../../data/pokdeng';
 const prop = defineProps({
     t: String,
-    n: Number,
+    n: String,
     showw: Boolean,
 })
 const active = ref(false)
@@ -28,7 +28,7 @@ const checkshow = () => {
     return false
 }
 const nameimg = () => {
-    return '../../assets/playingCar/10_of_clubs.svg'
+    return `images/playingCard/${prop.n}_of_${prop.t}.svg`
 }
 </script>
  
@@ -41,7 +41,7 @@ const nameimg = () => {
                     <img src="../../assets/optionCard/card_back.png" alt="Avatar" />
                 </div>
                 <div class="flip-card-back">
-                    <img :src="'../../assets/background/background.jpeg'" :alt="nameimg()" />
+                    <img :src="`images/playingCard/${prop.n}_of_${prop.t}.svg`" :alt="nameimg()" />
                 </div>
             </div>
         </div>

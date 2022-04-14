@@ -4,7 +4,7 @@ import { pok } from '../../../data/pokdeng.js';
 import { user } from '../../../data/user.js';
 
 const card = ref([])
-const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+const number = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "jack", "queen", "king"]
 const type = ["spades", "hearts", "diamonds", "clubs"]
 const randomobj = () => {
     let rannumber = Math.floor(Math.random() * number.length);
@@ -50,20 +50,28 @@ const reset = () => {
     pok.reStart()
     card.value = []
 }
+const point = ref()
 const endTurn = () => {
-    console.log(pok.playerCard);
-    pok.playerCard.filter((card) => {
-        if (card.Numbers == 10) {
-            console.log('jack');
-        }
-        if (card.Numbers == 11) {
-            console.log('queen');
-        }
-        if (card.Numbers == 12) {
-            console.log('king');
-        }
+    // console.log(pok.playerCard);
 
-    })
+    // for (let index = 0; index < pok.playerCard.length; index++) {
+    //     console.log(pok.playerCard);
+    //     const currCard = pok.playerCard[index];
+    //     console.log(currCard.Numbers);
+    //     point.value += currCard.Numbers
+    // }
+    // // pok.playerCard.filter((card) => {
+    // //     if (card.Numbers == 10) {
+    // //         console.log('jack');
+    // //     }
+    // //     if (card.Numbers == 11) {
+    // //         console.log('queen');
+    // //     }
+    // //     if (card.Numbers == 12) {
+    // //         console.log('king');
+    // //     }
+    // // })
+    // console.log(point.value);
     alert('end')
 }
 </script>
