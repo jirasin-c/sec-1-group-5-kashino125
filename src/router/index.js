@@ -5,6 +5,7 @@ import Leaderboard from '../views/Leaderboard.vue'
 import Signin from '../views/Signin.vue'
 import Signout from '../views/Signout.vue'
 import Signup from '../views/Signup.vue'
+import Edit from '../views/EditAccount.vue'
 const history = createWebHistory()
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: '/sign-up',
         name: 'Signup',
         component: Signup
+    },
+    {
+        path: '/edit-account',
+        name: 'Edit',
+        component: Edit
     }
 ]
 const router = createRouter({history,routes})
