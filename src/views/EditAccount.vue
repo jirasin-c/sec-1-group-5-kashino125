@@ -1,7 +1,9 @@
 <script setup>
 import { ref, onBeforeMount } from "vue";
+import { useRouter } from "vue-router";
 import { user } from "../../data/user";
 const accounts = ref([]);
+const router = useRouter();
 
 // const CurrentPassword = ref();
 
@@ -45,19 +47,16 @@ function confirmpassword() {
 }
 
 //ลบบัญชี
-const removeAccount = async (deleteAccountId) => {
+const removeAccount = async () => {
   confirmpassword();
   if ((are_u_user = true)) {
-    const res = await fetch(
-      `http://localhost:5000/accounts/${deleteAccountId}`,
-      {
-        method: "DELETE",
-      }
-    );
+    const res = await fetch(`http://localhost:5000/accounts/${user.userId}`, {
+      method: "DELETE",
+    });
     if (res.status === 200) {
-      accounts.value = accounts.value.filter(
-        (account) => account.userId !== deleteAccountId
-      );
+      accounts.value = {};
+      user.setLogoutStatus();
+      router.push(`/`);
       console.log("delete account successfully");
     } else console.log("error, cannot delete account");
   } else {
