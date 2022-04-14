@@ -5,8 +5,8 @@ import { user } from '../../data/user';
 // import AppLogin from '../components/AppLogin.vue';
 const appRouter = useRouter()
 const closeModal = () => {
-    // appRouter.push({ name: 'Home' })
-    appRouter.go(-1)
+    appRouter.push({ name: 'Home' })
+    // appRouter.go(-1)
 }
 user.setLogoutStatus()
 user.setLogoutUserId
