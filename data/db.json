@@ -27,6 +27,13 @@
       "name": "qq",
       "points": 1000,
       "id": 4
+    },
+    {
+      "userName": "Chin",
+      "passWord": "123",
+      "name": "Chin",
+      "points": 1000,
+      "id": 5
     }
   ]
 }
