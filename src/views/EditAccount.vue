@@ -23,7 +23,7 @@ onBeforeMount(async () => {
   await getUser();
 });
 
-const are_u_user = false;
+let are_u_user = false;
 
 function confirmpassword() {
   let text;
@@ -31,6 +31,7 @@ function confirmpassword() {
     "Please enter your password to confirm:",
     "confirm password"
   );
+
   if (check == accounts.value.passWord) {
     text = ":3";
     are_u_user = true;
@@ -42,6 +43,27 @@ function confirmpassword() {
   }
   // document.getElementById("demo").innerHTML = text;
 }
+
+//ลบบัญชี
+const removeAccount = async (deleteAccountId) => {
+  confirmpassword();
+  if ((are_u_user = true)) {
+    const res = await fetch(
+      `http://localhost:5000/accounts/${deleteAccountId}`,
+      {
+        method: "DELETE",
+      }
+    );
+    if (res.status === 200) {
+      accounts.value = accounts.value.filter(
+        (account) => account.userId !== deleteAccountId
+      );
+      console.log("delete account successfully");
+    } else console.log("error, cannot delete account");
+  } else {
+    console.log("password worng");
+  }
+};
 </script>
  
 <template>
@@ -56,7 +78,7 @@ function confirmpassword() {
     Edit Password:
     <input placeholder="New Password" />
     <br />
-    <button>Delet Account</button>
+    <button @click="removeAccount">Delet Account</button>
     <br />
     <button @click="confirmpassword">Apply</button>
   </div>
