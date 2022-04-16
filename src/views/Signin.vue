@@ -23,6 +23,14 @@ onBeforeMount(async () => {
 })
 
 const signIn = (signIn) => {
+    // console.log(signIn.isAnonymous);
+    if (signIn.isAnonymous == true) {
+        // console.log('you are anonymous');
+        user.setLoginStatus()
+        user.setLoginName('Anonymous')
+        user.setLoginUserPoint(1000)
+        closeModal()
+    }
     // console.log(e);
     // console.log(e.ac);
     // console.log(accounts.value);
@@ -63,7 +71,8 @@ const signIn = (signIn) => {
                 // currUser.value = ac.name
                 user.setLoginStatus()
                 user.setLoginUserId(current.id)
-                user.setLoginUserName(current.name)
+                user.setLoginName(current.name)
+                user.setLoginUserName(current.userName)
                 user.setLoginUserPoint(current.points)
                 // user.setUserName(ac.name)
                 // user.setStatus()

@@ -12,6 +12,7 @@ const props = defineProps({
         require: true
     }
 })
+const anonymous = ref(true)
 const userName = ref()
 const passWord = ref()
 const isInCorrect = computed(() => {
@@ -94,6 +95,10 @@ const isInCorrect = computed(() => {
                             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             @click="$emit('signIn', { ac: props.vueAccounts, username: userName, password: passWord, status: props.vueUserStatus })">Sign
                             in</button>
+                        <button
+                            class="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                            @click="$emit('signIn', { isAnonymous: anonymous })">Play
+                            as Anonymous</button>
                         <p class="text-red-500 animate-bounce" v-if="isInCorrect">Username or password are incorrect</p>
                         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
                             Not registered?

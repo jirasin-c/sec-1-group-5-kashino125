@@ -10,7 +10,8 @@ const closeModal = () => {
 }
 user.setLogoutStatus()
 user.setLogoutUserId
-user.setLoginUserName()
+user.setLogoutName()
+user.setLogoutUserName()
 user.setLogoutUserPoint()
 closeModal()
 </script>

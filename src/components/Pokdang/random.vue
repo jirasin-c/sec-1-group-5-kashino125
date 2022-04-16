@@ -52,26 +52,26 @@ const reset = () => {
 }
 const point = ref()
 const endTurn = () => {
-    // console.log(pok.playerCard);
+    console.log(pok.playerCard);
 
-    // for (let index = 0; index < pok.playerCard.length; index++) {
-    //     console.log(pok.playerCard);
-    //     const currCard = pok.playerCard[index];
-    //     console.log(currCard.Numbers);
-    //     point.value += currCard.Numbers
-    // }
-    // // pok.playerCard.filter((card) => {
-    // //     if (card.Numbers == 10) {
-    // //         console.log('jack');
-    // //     }
-    // //     if (card.Numbers == 11) {
-    // //         console.log('queen');
-    // //     }
-    // //     if (card.Numbers == 12) {
-    // //         console.log('king');
-    // //     }
-    // // })
-    // console.log(point.value);
+    for (let index = 0; index < pok.playerCard.length; index++) {
+        console.log(pok.playerCard);
+        const currCard = pok.playerCard[index];
+        console.log(currCard.Numbers);
+        point.value += currCard.Numbers
+    }
+    // pok.playerCard.filter((card) => {
+    //     if (card.Numbers == 10) {
+    //         console.log('jack');
+    //     }
+    //     if (card.Numbers == 11) {
+    //         console.log('queen');
+    //     }
+    //     if (card.Numbers == 12) {
+    //         console.log('king');
+    //     }
+    // })
+    console.log(point.value);
     alert('end')
 }
 </script>

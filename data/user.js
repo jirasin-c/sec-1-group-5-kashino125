@@ -1,6 +1,7 @@
 import {reactive} from 'vue'
 export const user = reactive({
     statusUser: false,
+    name: null,
     userName: null,
     userId: null,
     userPoint: null,
@@ -10,8 +11,11 @@ export const user = reactive({
     setLoginUserId(id){
         this.userId = id
     },
-    setLoginUserName(name){
-        this.userName = name
+    setLoginName(name){
+        this.name = name
+    },
+    setLoginUserName(usrName){
+        this.userName = usrName
     },
     setLoginUserPoint(point){
         this.userPoint = point
@@ -21,6 +25,9 @@ export const user = reactive({
     },
     setLogoutUserId(){
         this.userId = null
+    },
+    setLogoutName(){
+        this.name = null
     },
     setLogoutUserName(){
         this.userName = null

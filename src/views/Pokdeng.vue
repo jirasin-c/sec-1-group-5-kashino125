@@ -36,7 +36,7 @@ if (user.statusUser == false) {
         </footer>
         <div class="h-auto">
             <div class="text-white text-xl flex justify-center">
-                <p>Player name: {{ user.userName }} <br> Points: {{ user.userPoint }} </p>
+                <p>Player name: {{ user.name }} <br> Points: {{ user.userPoint }} </p>
             </div>
             <Player />
         </div>

@@ -14,6 +14,7 @@ const goBack = () => {
 const accounts = ref([])
 const isInCorrect = ref(false)
 const userUsed = ref(false)
+const requireFill = ref(false)
 
 //GET method
 const getUser = async () => {
@@ -30,9 +31,10 @@ const checkUsedUserName = (signUpUserName) => {
     accounts.value.filter((current) => {
         if (current.userName === signUpUserName) {
             userUsed.value = true
-        } else {
-            userUsed.value = false
         }
+        // else {
+        //     userUsed.value = false
+        // }
     }
     );
     // console.log(result);
@@ -59,9 +61,13 @@ const checkUsedUserName = (signUpUserName) => {
 const signUp = async (signUp) => {
     userUsed.value = false
     isInCorrect.value = false
+    requireFill.value = false
     // console.log(signUp.username);
     // console.log(signUp.password);
     // console.log(signUp.name);
+    if (signUp.name == undefined || signUp.username == undefined || signUp.password == undefined || signUp.confirmPass == undefined) {
+        requireFill.value = true
+    }
     if (signUp.password != signUp.confirmPass) {
         userUsed.value = false
         isInCorrect.value = true
@@ -94,7 +100,8 @@ const signUp = async (signUp) => {
 const signIn = (signUp) => {
     user.setLoginStatus()
     user.setLoginUserId(signUp.id)
-    user.setLoginUserName(signUp.name)
+    user.setLoginName(signUp.name)
+    user.setLoginUserName(signUp.userName)
     user.setLoginUserPoint(1000)
 }
 
@@ -103,8 +110,8 @@ const signIn = (signUp) => {
 </script>
  
 <template>
-    <AppSignup :vuePassStatus="isInCorrect" :vueUserUsed="userUsed" @closeModal="closeModal" @signUp="signUp"
-        @goBack="goBack" />
+    <AppSignup :vuePassStatus="isInCorrect" :vueUserUsed="userUsed" :vueRequireFill="requireFill"
+        @closeModal="closeModal" @signUp="signUp" @goBack="goBack" />
 </template>
  
 <style>

@@ -47,7 +47,7 @@ import { user } from "../../data/user";
             <li v-show="user.statusUser">
               <router-link :to="{ name: 'Edit' }"
                 class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-1 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                Welcome: {{ user.userName }}</router-link>
+                Welcome: {{ user.name }}</router-link>
             </li>
             <li v-if="!user.statusUser">
               <router-link :to="{ name: 'Signin' }"
@@ -68,7 +68,7 @@ import { user } from "../../data/user";
             <button class="bg-gray-300 text-gray-700 font-semibold py-1 px-4 rounded inline-flex text-md items-center">
               <span class="mr-3 text-md" v-if="!user.statusUser">Menu</span>
               <span v-else class="block whitespace-no-wrap">Welcome: {{
-                user.userName
+                user.name
               }}</span>
               <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
