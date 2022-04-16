@@ -33,7 +33,6 @@ export const pok = reactive({
         this.playerCard = [{ Numbers: null, Type: null }, { Numbers: null, Type: null }, { Numbers: null, Type: null }] 
         this.statusStart = false
         this.card = null
-        this.botstatus = false
         this.playerdraw = false
         this.botDraw = false
         this.allshow = false

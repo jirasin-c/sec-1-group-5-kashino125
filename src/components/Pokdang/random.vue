@@ -103,6 +103,7 @@ const numberstoInt = (value) => {
 const reset = () => {
     pok.reStart()
     btnEnd.value = false
+    disDraw.value = false
     card.value = []
 }
 const endTurn = () => {
@@ -135,7 +136,6 @@ const endTurn = () => {
     } else {
         alert('Bot Win')
     }
-
 }
 
 const sumNumber = (count, value) => {
