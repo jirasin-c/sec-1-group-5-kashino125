@@ -1,10 +1,11 @@
 <script setup>
 import { computed, reactive, ref } from 'vue';
-import { pok } from './pokdeng';
+import { pok } from '../../../data/pokdeng';
 const prop = defineProps({
     t: String,
     n: String,
     showw: Boolean,
+    showactive: Boolean,
 })
 const active = ref(false)
 const btn = () => {
@@ -14,18 +15,22 @@ const btn = () => {
     else {
         active.value = false
     }
+    console.log(active.value);
 }
 
 
 const checkshow = () => {
-    if (prop.showw) {
-        if (active.value) {
-            return true
+    if (!prop.showactive) {
+        if (prop.showw) {
+            if (active.value) {
+                return true
+            }
+            return active.value
         }
-        return active.value
+        active.value = false
+        return false
     }
-    active.value = false
-    return false
+    return true
 }
 const nameimg = () => {
     return `images/playingCard/${prop.n}_of_${prop.t}.svg`
