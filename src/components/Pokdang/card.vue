@@ -28,22 +28,20 @@ const checkshow = () => {
     return false
 }
 const nameimg = () => {
-    return '../../assets/playingCar/10_of_clubs.svg'
+    return `images/playingCard/${prop.n}_of_${prop.t}.svg`
 }
 </script>
  
 <template>
-    <div
-        class="fixed h-screen transform transition duration-1000 ease-in-out"
-        v-bind:class="{ '-translate-x-full left-0 ': !prop.showw }"
-    >
+    <div class="fixed h-screen transform transition duration-1000 ease-in-out"
+        v-bind:class="{ '-translate-x-full left-0 ': !prop.showw }">
         <div class="flip-card" v-on:click="btn()">
             <div class="flip-card-inner" v-bind:class="{ flipActive: checkshow() }">
                 <div class="flip-card-front">
                     <img src="../../assets/optionCard/card_back.png" alt="Avatar" />
                 </div>
                 <div class="flip-card-back">
-                    <img :src="'../../assets/background/background.jpeg'" :alt="nameimg()" />
+                    <img :src="`images/playingCard/${prop.n}_of_${prop.t}.svg`" :alt="nameimg()" />
                 </div>
             </div>
         </div>
@@ -67,6 +65,7 @@ const nameimg = () => {
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 /* 
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
