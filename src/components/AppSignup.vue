@@ -46,48 +46,42 @@ const requireFill = computed(() => {
                             </svg>
                         </span>
                     </button>
-                    <h3 class="text-xl font-medium text-gray-900 dark:text-white mb-5">Sign up to Kashino125</h3>
+                    <h3 class="text-xl font-medium text-white mb-5">Sign up to Kashino125</h3>
                     <div class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8">
-                        <!-- <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"> -->
                         <div>
-                            <label for="disname"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Display
+                            <label for="disname" class="block mb-2 text-sm font-medium text-gray-300">Display
                                 name</label>
                             <input type="text" name="disname" id="disname"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="bg-gray-50 border text-sm rounded-lg  block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
                                 placeholder="displayname" required v-model="disName" />
                         </div>
                         <div>
-                            <label for="username"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">User
+                            <label for="username" class="block mb-2 text-sm font-medium text-gray-300">User
                                 name</label>
                             <input type="text" name="username" id="username"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="bg-gray-50 border text-sm rounded-lg  block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
                                 placeholder="username" required v-model="userName" />
                         </div>
                         <div>
-                            <label for="password"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-300">Password</label>
                             <input type="password" name="password" id="password" placeholder="••••••••"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="bg-gray-50 border text-sm rounded-lg  block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
                                 required v-model="passWord" />
                         </div>
                         <div>
-                            <label for="repassword"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Confirm
+                            <label for="repassword" class="block mb-2 text-sm font-medium text-gray-300">Confirm
                                 Password</label>
                             <input type="password" name="repassword" id="repassword" placeholder="••••••••"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="bg-gray-50 border text-sm rounded-lg  block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
                                 required v-model="confirmPassWord" />
                         </div>
                         <button
-                            class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
                             @click="$emit('signUp', { name: disName, username: userName, password: passWord, confirmPass: confirmPassWord })">Create
                             account</button>
                         <p class="text-red-500 animate-bounce" v-if="isInCorrect">Password are unmatched</p>
                         <p class="text-red-500 animate-bounce" v-if="requireFill">Please fill the require fields</p>
                         <p class="text-red-500 animate-bounce" v-if="userUsed">Username already used</p>
-                        <!-- </form> -->
                     </div>
                 </div>
                 <div class="modal-button">

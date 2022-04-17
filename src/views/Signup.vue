@@ -32,29 +32,9 @@ const checkUsedUserName = (signUpUserName) => {
         if (current.userName === signUpUserName) {
             userUsed.value = true
         }
-        // else {
-        //     userUsed.value = false
-        // }
     }
     );
-    // console.log(result);
-    // if (result != null) {
-    //     console.log('used');
-    // } else {
-    //     console.log('use');
-    // }
-    // for (let index = 0; index < accounts.value.length; index++) {
-    //     const check = accounts.value[index];
-    //     // console.log(check);
-    //     // console.log(check.userName);
-    //     // console.log(signUpUserName);
-    //     if (check.userName === signUpUserName) {
-    //         console.log('already used');
-    //     } else {
-    //         console.log('can use');
-    //     }
-    // }
-    // console.log(accounts.value[0]);
+
 }
 
 //POST method
@@ -62,9 +42,6 @@ const signUp = async (signUp) => {
     userUsed.value = false
     isInCorrect.value = false
     requireFill.value = false
-    // console.log(signUp.username);
-    // console.log(signUp.password);
-    // console.log(signUp.name);
     if (signUp.name == undefined || signUp.username == undefined || signUp.password == undefined || signUp.confirmPass == undefined) {
         requireFill.value = true
     }

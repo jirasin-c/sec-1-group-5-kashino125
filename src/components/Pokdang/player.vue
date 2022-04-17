@@ -18,12 +18,10 @@ const checkThree = (id) => {
                 <div v-for="(value, count) of pok.playerCard" :id="count + 1"
                     :class="{ 'invisible': checkThree(count) }">
                     <Card :t="value.Type" :n="value.Numbers" :showw="!checkThree(count)" :showactive="pok.allshow" />
-                    <!-- {{ value }} -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- <button v-on:click="showThree()">dsadasdasdsad</button> -->
 </template>
  
 <style scoped>

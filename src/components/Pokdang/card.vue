@@ -9,13 +9,11 @@ const prop = defineProps({
 })
 const active = ref(false)
 const btn = () => {
-    console.log(pok.statusStart)
     if (pok.statusStart) //true
         active.value = true
     else {
         active.value = false
     }
-    console.log(active.value);
 }
 
 

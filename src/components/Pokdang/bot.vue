@@ -21,7 +21,6 @@ const checkThree = (id) => {
                 <div v-for="(value, count) of pok.botCard" :id="count + 1"
                     :class="{ 'invisible': checkThree(count), 'disabledbutton': !pok.botstatus }">
                     <Card :t="value.Type" :n="value.Numbers" :showw="!checkThree(count)" :showactive="pok.allshow" />
-                    <!-- {{ value }} -->
                 </div>
             </div>
         </div>
