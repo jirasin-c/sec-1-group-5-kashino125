@@ -40,42 +40,21 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <!-- create Leaderboard -->
+  <div class="header">
+    <h1 class="title">Leaderboard</h1>
+  </div>
   <div>
     <div class="card one">
-      <div class="header">
-        <i class="arrow fas fa-chevron-left"></i>
-        <h1 class="title">Leaderboard</h1>
-      </div>
-
       <div class="profile">
-        <!-- <div v-for="(three, index) in topThree">
-          <div class="num">{{ index }}</div>
-          <img src="" alt="" class="photo" />
-          <p class="link">{{ three[index + 1][name] }}</p>
-          <p class="points">{{ three.points }}</p>
-        </div> -->
-
         <div class="person second">
           <div class="num">2</div>
-          <!-- <i class="fas fa-caret-up"></i> -->
           <img src="../img/silver_medal.png" alt="" class="photo" />
           <p class="link">{{ second.name }}</p>
           <p class="points">{{ second.points }}</p>
         </div>
-        <!-- <div>
-          <ul v-for="u in user">
-            <li>
-              <div class="person">
-                <div class="num">{{ u.name }}</div>
-                <p class="points">{{ u.points }}</p>
-              </div>
-            </li>
-          </ul>
-        </div> -->
+
         <div class="person first">
           <div class="num">1</div>
-          <i class="fas fa-crown"></i>
           <img src="../img/gold_medal.png" alt="" class="photo main" />
           <p class="link">{{ first.name }}</p>
           <p class="points">{{ first.points }}</p>
@@ -83,23 +62,25 @@ onBeforeMount(async () => {
 
         <div class="person third">
           <div class="num">3</div>
-          <i class="fas fa-caret-up"></i>
           <img src="../img/bronz_medal.png" alt="" class="photo" />
           <p class="link">{{ third.name }}</p>
           <p class="points">{{ third.points }}</p>
         </div>
       </div>
 
+      <!-- can scroll -->
+
       <div class="rest">
-        <div class="others flex" v-for="(forth, index) in formForth">
-          <div class="rank">
-            <i class="fas fa-caret-up"></i>
-            <p class="num">{{ index + 4 }}</p>
-          </div>
-          <div class="info flex">
-            <img src="" alt="" class="p_img" />
-            <p class="link">{{ forth.name }}</p>
-            <p class="points">{{ forth.points }}</p>
+        <div class="overflow-auto">
+          <div class="others flex" v-for="(forth, index) in formForth">
+            <div class="rank">
+              <p class="num">{{ index + 4 }}</p>
+            </div>
+            <div class="info flex">
+              <img src="" alt="" class="p_img" />
+              <p class="link">{{ forth.name }}</p>
+              <p class="points">{{ forth.points }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -115,7 +96,7 @@ onBeforeMount(async () => {
   box-sizing: border-box;
   line-height: 1.5;
   transition: all 0.3s ease-in-out;
-  font-family: 'Josefin Sans', Arial;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -127,11 +108,26 @@ body {
   background: #2f855a;
 }
 
-.title h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+.header {
+  width: 100%;
+  height: 100px;
+  background: #2f855a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+
+}
+
+.header .title {
   color: #fff;
-  margin-bottom: 1rem;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.header .title h1 {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .card {
@@ -140,20 +136,11 @@ body {
   margin: 2rem;
   border-radius: 15px;
   background: #02383c;
-}
-
-.card .header {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid #fff;
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-.card .header .title {
-  font-weight: 300;
 }
 
 .photo {
@@ -167,6 +154,11 @@ body {
 
 .main {
   width: 85px;
+  background: #fff;
+  border-radius: 50%;
+  border: 5px solid #f9d632;
+  box-shadow: 0 0 20px #f9d632;
+  margin: 1rem 0;
 }
 
 .profile {
@@ -205,22 +197,29 @@ body {
 .fa-caret-up {
   color: cyan;
   font-size: 21px;
+  margin-left: 0.5rem;
+
 }
 
 .link {
   margin: 0.2rem 0;
   color: #fff;
   margin-top: -0.3rem;
-  font-size: 13px;
+  font-size: 20px;
+  font-weight: bold;
+
 }
 
 .points {
   color: cyan;
   font-size: 17px;
+  font-weight: bold;
+
 }
 
 .second {
   margin-right: -0.7rem !important;
+  
 }
 
 .third {
@@ -236,6 +235,8 @@ body {
 .flex {
   display: flex;
   align-items: center;
+  justify-content: center;
+
 }
 
 .others {
@@ -244,6 +245,7 @@ body {
   margin-top: 1rem;
   align-items: center;
   justify-content: center;
+
 }
 
 .info {
@@ -252,15 +254,26 @@ body {
   align-items: center;
   border-radius: 30px;
   background: rgba(210, 255, 213, 0.3);
+  padding: 0.5rem;
+  width: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .info .points {
   margin-left: 0.2rem;
   margin-right: 1.2rem;
+
 }
 
 .info .link {
   margin: 0 1rem;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+
 }
 
 .rank {
@@ -268,10 +281,15 @@ body {
   align-items: center;
   margin: 0 1rem;
   flex-direction: column-reverse;
+
 }
 
 .rank i {
   margin-top: -5px !important;
+  color: #f9d632;
+  font-size: 30px;
+  font-weight: bold;
+
 }
 
 .rank .num {
@@ -279,5 +297,13 @@ body {
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+
 }
+
+.overflow-auto {
+  overflow-y: auto;
+  height: 200px;
+  
+}
+
 </style>
