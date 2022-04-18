@@ -38,7 +38,7 @@
 </p>
 
 ## ความสามารถของแต่ละ Component
-### Views
+### Views :จำนวน 7 Views
 - <strong>Home.vue</strong> </br>  หน้าแรกของตัวเว็บไซต์
 - <strong>Pokdeng.vue</strong> </br> ส่วนหน้าตาของเกม Pokdeng โดยจะมีการ UPDATE Points ไปยัง db.json ของผู้เล่นเมื่อกดเริ่มเกมและจบเกม
 - <strong>Signin.vue</strong> </br> ส่วนของการ GET ข้อมูลของ User จาก db.json เพื่อนำข้อมูลมาเช็คกับข้อมูลจาก Component AppSignin ที่ทำการส่ง emit มา ก่อนการ Sign in เข้าสู่ระบบ โดยถ้าชื่อหรือรหัสผ่านผิดจะทำการส่ง status การ login ไปยัง Component AppSignin เพื่อโชว์ข้อความเตือนผู้ใช้
@@ -46,7 +46,7 @@
 - <strong>Signup.vue</strong> </br> ส่วนของการ POST ข้อมูลไปยัง db.json โดยจะทำการ GET ข้อมูลมาจาก db.json เพื่อเช็คว่าความถูกต้องของข้อมูลชื่อ username ที่ทำการระบุมาจาก Component AppSigup ที่ทำการส่ง emit มา ว่ามีอยู่ใน db.json แล้วหรือยัง 
 - <strong>Leaderboard.vue</strong> </br> หน้าตาการจัดลำดับของผู้เล่นทุกคน โดยทำการ GET ข้อมูลจาก db.json และทำการ sort ข้อมูลตามจำนวน Points ของผู้เล่นจากมากไปน้อย
 - <strong>EditAccount.vue</strong>  </br> เป็นในส่วนของหน้าที่สามารถ UPDATE และ DELETE ข้อมูลของผู้เล่น โดยสามารถเปลี่ยนได้ทั้ง Display name และ User name หรือจะทำการลบ Account 
-### Component
+### Components :จำนวน 7 Components
 - <strong>AppNavbar.vue</strong> </br> หน้าตาของ Navbar และจัดการเรื่องของการทำ router 
 - <strong>AppSignin.vue</strong> </br> ส่วนหน้าตาของการ Signin และทำการส่ง emit ข้อมูลต่างๆจากการที่ผู้ใช้กรอกกลับมาให้กับหน้า View Signin.vue
 - <strong>AppSignup.vue</strong> </br> ส่วนหน้าตาของ Signout และทำการส่ง emit ข้อมูลต่างๆจากการที่ผู้ใช้กรอกกลับมาให้กับหน้า View Signup.vue
