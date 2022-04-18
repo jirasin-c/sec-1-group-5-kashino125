@@ -13,28 +13,28 @@
 
 ### ขั้นตอนการใช้งานแบบสมัครสมาชิก
 <p align="center">
- <img src="" />
+ <img src="https://user-images.githubusercontent.com/68856607/163744510-a4605ad3-17a5-401c-8228-990cee875097.gif" />
 </p>
 
 ### Function ภายในเว็บ
-- Sign up, Sign in and Sign out
+- Sign up, Sign in and Sign out 
 <p align="center">
- <img src="" />
+ <img src="https://user-images.githubusercontent.com/68856607/163744541-273d6a26-4586-41d1-897a-554ed45189cc.gif" />
 </p>
 
 - Game Pokdeng
 <p align="center">
- <img src="" />
+ <img src="https://user-images.githubusercontent.com/68856607/163744517-f539fe6f-af1e-4d10-bca4-df2d5dd261a3.gif" />
 </p>
 
 - Leaderboard
 <p align="center">
- <img src="" />
+ <img src="https://user-images.githubusercontent.com/68856607/163744555-d2ba81b1-c7e3-4d5c-aac5-46c2ac141bf9.gif" />
 </p>
 
 - Edit Account
 <p align="center">
- <img src="" />
+ <img src="https://user-images.githubusercontent.com/68856607/163744558-ba316d76-a7c2-463d-8906-c74bd0c819be.gif" />
 </p>
 
 ## ความสามารถของแต่ละ Component
