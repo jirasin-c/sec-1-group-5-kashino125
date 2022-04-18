@@ -1,40 +1,61 @@
-# 💸Mod-Exchange
+# 🎰Kashino125
 <p align="center">
- <img src="https://media.giphy.com/media/W56iRg3BTRZJvzKGu5/giphy.gif" />
+ <img src="https://media3.giphy.com/media/H6nbCkEAauNjBzxxrJ/giphy.gif?cid=ecf05e47fkuqzbu9ziz7gds3j0qm3iocxcgwn1jboq3g8elk&rid=giphy.gif&ct=g" />
 </p>
 
-## About Mod-Exchange
-เป็น Web App ที่แปลงค่าเงินจากสกุลเงินประเทศๆ นึง ไปยังอีกสกุลเงินประเทศนึง โดยรวมไปถึงสกุลเงินแบบ Digital หรือที่เรียกว่า Crypto ด้วย
+## About Kashino125
+เป็น Web App ที่ให้ผู้เล่นได้เล่นเกม Pokdeng โดยผู้เล่นจะต้องสมัครสมาชิกก่อนเล่นเกมเพื่อที่ระบบจะนำข้อมูลของผู้เล่นไปจัดอันดับ ซึ่งจะมีชื่อ และ คะแนนของผู้เล่นอยู่บน Leaderboard หรือจะเล่นในโหมด Anonymous ก็ได้แต่จะไม่มีการบันทึกคะแนนขึ้น Leaderboard โดยขั้นตอนการใช้งาน Web สามารถดูตาม GIF ด้านล่างได้เลย
+
+### ขั้นตอนการใช้งานแบบ Anonymous
 <p align="center">
- <img src="https://user-images.githubusercontent.com/68856607/155845030-ec5b94d2-8db3-43a8-ab3a-9d111b28b695.gif" />
+ <img src="" />
+</p>
+
+### ขั้นตอนการใช้งานแบบสมัครสมาชิก
+<p align="center">
+ <img src="" />
 </p>
 
 ### Function ภายในเว็บ
-- Seach ชื่อสกุลเงิน
+- Sign up, Sign in and Sign out
 <p align="center">
- <img src="https://user-images.githubusercontent.com/68856607/155846536-4fb3260d-cbc3-4f8d-a8ca-54e008cdf520.gif" />
+ <img src="" />
 </p>
 
-- Error เมื่อใส่ข้อมูลที่ต้องใช้ในการคำนวณไม่ครบ
+- Game Pokdeng
 <p align="center">
- <img src="https://user-images.githubusercontent.com/68856607/155846755-e0e72781-978d-4228-a708-26a2787a09a4.gif" />
+ <img src="" />
 </p>
 
-- เปลี่ยนสกุลเงินเป็น Crypto และการ Reset value
+- Leaderboard
 <p align="center">
- <img src="https://user-images.githubusercontent.com/68856607/155846660-cdb4e427-1a9f-45d8-bed4-fc0ebc4a3650.gif" />
+ <img src="" />
 </p>
 
-- Dark mode
+- Edit Account
 <p align="center">
- <img src="https://user-images.githubusercontent.com/68856607/155846675-768e1442-3078-4de5-8fd7-6861f87bacba.gif" />
+ <img src="" />
 </p>
 
-### Ref.
-- Project Web Application ของกลุ่มพวกเราได้แรงบันดาลใจการทำมาจาก <br>
-[Xe Currency Converter](https://www.xe.com/currencyconverter/)
+## ความสามารถของแต่ละ Component
+### Views
+- Home.vue
+- Pokdeng.vue
+- Signin.vue
+- Signout.vue
+- Signup.vue
+- Leaderboard.vue
+- EditAccount.vue
+### Component
+- AppNavbar.vue
+- AppSignin.vue
+- AppSignup.vue
+- bot.vue
+- card.vue
+- player.vue
+- random.vue
 
-# Vue 3 + Vite     ![This is an image](https://github.com/thanakritcankha/mod-exchange/blob/main/public/favicon.ico)
+# Vue 3 + Vite     ![This is an image](https://github.com/thanakritcankha/sec-1-group-5-kashino125/blob/main/public/favicon.ico)
 This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
 ## Recommended IDE Setup
@@ -46,16 +67,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ``` bash
 npm install
 ```
-กลุ่มพวกเราได้มีการใช้ DaisyUI และ Sweetalert 2 ในการทำ Project ครั้งนี้ จึงมีสิ่งที่จำเป็นต้อง Install เพิ่มดังนี้
-- Install css Framework [tailwind](https://tailwindcss.com/docs/installation) and [daisyUi](https://daisyui.com/) Tailwind CSS Components
-``` bash
-npm npm install -D tailwindcss postcss autoprefixer
-npm i daisyui
-```
-- ใช้ [vue-sweetalert2](https://www.npmjs.com/package/vue-sweetalert2) ในการทำ alert <br>
-``` sh
-npm install -S vue-sweetalert2 
-```
+
 - Run Project
 ``` sh
 npm run dev 
