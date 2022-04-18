@@ -42,10 +42,10 @@
 - Home.vue หน้าแรกของตัวเว็บไซต์
 - Pokdeng.vue ส่วนหน้าตาของเกม Pokdeng 
 - Signin.vue ส่วนของการ GET ข้อมูลของ User
-- Signout.vue
+- Signout.vue ส่วนของการ signout ออกจากระบบ
 - Signup.vue ส่วนของการ POST ข้อมูลไปยัง db.json
 - Leaderboard.vue หน้าตาการจัดลำดับของผู้เล่นทุกคน
-- EditAccount.vue 
+- EditAccount.vue  เป็นในส่วนของหน้าที่สามารถ edit account สามารถเปลี่ยนได้ทั้งชื่อ หรือลบ account 
 ### Component
 - AppNavbar.vue หน้าตาของ Navbar และจัดการเรื่องของการทำ router 
 - AppSignin.vue ส่วนหน้าตาของการ Signin
