@@ -41,15 +41,15 @@
 ### Views
 - Home.vue หน้าแรกของตัวเว็บไซต์
 - Pokdeng.vue ส่วนหน้าตาของเกม Pokdeng 
-- Signin.vue
+- Signin.vue ส่วนของการ GET ข้อมูลของ User
 - Signout.vue
-- Signup.vue
+- Signup.vue ส่วนของการ POST ข้อมูลไปยัง db.json
 - Leaderboard.vue หน้าตาการจัดลำดับของผู้เล่นทุกคน
 - EditAccount.vue 
 ### Component
 - AppNavbar.vue หน้าตาของ Navbar และจัดการเรื่องของการทำ router 
-- AppSignin.vue
-- AppSignup.vue
+- AppSignin.vue ส่วนหน้าตาของการ Signin
+- AppSignup.vue ส่วนหน้าตาของ Signout
 - bot.vue เป็นส่วนของหน้าตาการ์ดของบอท 
 - card.vue หน้าตาของการที่จะถูกสุ่มในเเต่ละใบ
 - player.vue เป็นส่วนการ์ดของผู้เล่น
