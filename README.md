@@ -1,6 +1,6 @@
 # 🎰Kashino125
 <p align="center">
- <img src="https://giphy.com/embed/H6nbCkEAauNjBzxxrJ" />
+ <img src="https://media3.giphy.com/media/H6nbCkEAauNjBzxxrJ/giphy.gif?cid=ecf05e47fkuqzbu9ziz7gds3j0qm3iocxcgwn1jboq3g8elk&rid=giphy.gif&ct=g" />
 </p>
 
 ## About Kashino125
