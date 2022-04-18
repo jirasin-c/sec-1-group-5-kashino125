@@ -114,8 +114,6 @@ const reset = () => {
     card.value = []
 }
 const endTurn = () => {
-    console.log(amount.value);
-    console.log(user.userPoint);
     pok.setAllShow(true)
     btnEnd.value = true
     let botNumber = numberstoInt(pok.botCard)
@@ -176,7 +174,7 @@ const EndShow = () => {
 </script>
  
 <template>
-    <div class="grid grid-cols-4 gap-4 flex justify-center p-3">
+    <div class="grid grid-cols-3 gap-4 flex justify-center p-3">
         <button
             class="hover:scale-110 rounded-2xl px-8 py-2 text-white text-xl bg-gradient-to-r bg-gradient-to-r from-cyan-500 to-blue-500 duration-300"
             v-on:click="checkAmount" :class="{ 'opacity-25 cursor-not-allowed': pok.statusStart }"
@@ -190,9 +188,9 @@ const EndShow = () => {
             v-on:click="endTurn(), $emit('updatePoint', $event)" :class="{ 'opacity-25 cursor-not-allowed': EndShow() }"
             :disabled="btnEnd">End
             Turn</button>
-        <button
+        <!-- <button
             class="hover:scale-110 rounded-2xl px-8 py-2 text-white text-xl bg-gradient-to-r bg-gradient-to-r from-cyan-500 to-blue-500 duration-300"
-            v-on:click="reset()" :class="{ 'opacity-25 cursor-not-allowed ': !pok.statusStart }">Restart</button>
+            v-on:click="reset()" :class="{ 'opacity-25 cursor-not-allowed ': !pok.statusStart }">Restart</button> -->
 
     </div>
     <div :class="{ 'hidden': !isAmount }">
@@ -265,7 +263,7 @@ const EndShow = () => {
                         <p v-show="pointDraw" class="text-white text-xl">Receive {{ amount }} Points !</p>
                     </div>
                     <div class="modal-button">
-                        <button @click="haveWinner = false">Close</button>
+                        <button @click="haveWinner = false, reset()">Close</button>
                     </div>
                 </div>
             </div>
