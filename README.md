@@ -39,21 +39,21 @@
 
 ## ความสามารถของแต่ละ Component
 ### Views
-- Home.vue
-- Pokdeng.vue
+- Home.vue หน้าแรกของตัวเว็บไซต์
+- Pokdeng.vue ส่วนหน้าตาของเกม Pokdeng 
 - Signin.vue
 - Signout.vue
 - Signup.vue
-- Leaderboard.vue
-- EditAccount.vue
+- Leaderboard.vue หน้าตาการจัดลำดับของผู้เล่นทุกคน
+- EditAccount.vue 
 ### Component
-- AppNavbar.vue
+- AppNavbar.vue หน้าตาของ Navbar และจัดการเรื่องของการทำ router 
 - AppSignin.vue
 - AppSignup.vue
-- bot.vue
-- card.vue
-- player.vue
-- random.vue
+- bot.vue เป็นส่วนของหน้าตาการ์ดของบอท 
+- card.vue หน้าตาของการที่จะถูกสุ่มในเเต่ละใบ
+- player.vue เป็นส่วนการ์ดของผู้เล่น
+- random.vue ส่วนที่ทำการสุ่มเลขต่างๆ รวมไปถึงการ compare ของเกม
 
 # Vue 3 + Vite     ![This is an image](https://github.com/thanakritcankha/sec-1-group-5-kashino125/blob/main/public/favicon.ico)
 This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
