@@ -78,7 +78,7 @@ const signIn = (signUp) => {
     user.setLoginStatus()
     user.setLoginUserId(signUp.id)
     user.setLoginName(signUp.name)
-    user.setLoginUserName(signUp.userName)
+    user.setLoginUserName(signUp.username)
     user.setLoginUserPoint(1000)
 }
 
