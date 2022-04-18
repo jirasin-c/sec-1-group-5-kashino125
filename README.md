@@ -72,6 +72,10 @@ npm install
 ``` sh
 npm run dev 
 ```
+- Run Backend
+``` sh
+npm run backend
+```
  
 
 # INT203-Group5
