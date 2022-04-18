@@ -40,7 +40,7 @@
 ## ความสามารถของแต่ละ Component
 ### Views
 - <strong>Home.vue</strong> </br>  หน้าแรกของตัวเว็บไซต์
-- <strong>Pokdeng.vue</strong> </br> ส่วนหน้าตาของเกม Pokdeng โดยจะมีการ Update point ไปยัง db.json ของผู้เล่นเมื่อกดเริ่มเกมและจบเกม
+- <strong>Pokdeng.vue</strong> </br> ส่วนหน้าตาของเกม Pokdeng โดยจะมีการ UPDATE Points ไปยัง db.json ของผู้เล่นเมื่อกดเริ่มเกมและจบเกม
 - <strong>Signin.vue</strong> </br> ส่วนของการ GET ข้อมูลของ User จาก db.json เพื่อนำข้อมูลมาเช็คกับข้อมูลจาก Component AppSignin ที่ทำการส่ง emit มา ก่อนการ Sign in เข้าสู่ระบบ โดยถ้าชื่อหรือรหัสผ่านผิดจะทำการส่ง status การ login ไปยัง Component AppSignin เพื่อโชว์ข้อความเตือนผู้ใช้
 - <strong>Signout.vue</strong> </br> ส่วนของการ signout ออกจากระบบ
 - <strong>Signup.vue</strong> </br> ส่วนของการ POST ข้อมูลไปยัง db.json โดยจะทำการ GET ข้อมูลมาจาก db.json เพื่อเช็คว่าความถูกต้องของข้อมูลชื่อ username ที่ทำการระบุมาจาก Component AppSigup ที่ทำการส่ง emit มา ว่ามีอยู่ใน db.json แล้วหรือยัง 
