@@ -1,6 +1,6 @@
 # 🎰Kashino125
 <p align="center">
- <img src="https://c.tenor.com/5AKikTwMYQAAAAAC/poker-full-house.gif" />
+ <img src="https://giphy.com/embed/H6nbCkEAauNjBzxxrJ" />
 </p>
 
 ## About Kashino125
