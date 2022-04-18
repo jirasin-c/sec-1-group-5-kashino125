@@ -39,21 +39,21 @@
 
 ## ความสามารถของแต่ละ Component
 ### Views
-- Home.vue </br>  หน้าแรกของตัวเว็บไซต์
-- Pokdeng.vue </br> ส่วนหน้าตาของเกม Pokdeng โดยจะมีการ Update point ไปยัง db.json ของผู้เล่นเมื่อกดเริ่มเกมและจบเกม
-- Signin.vue </br> ส่วนของการ GET ข้อมูลของ User จาก db.json เพื่อนำข้อมูลมาเช็คกับข้อมูลจาก Component AppSignin ที่ทำการส่ง emit มา ก่อนการ Sign in เข้าสู่ระบบ โดยถ้าชื่อหรือรหัสผ่านผิดจะทำการส่ง status การ login ไปยัง Component AppSignin เพื่อโชว์ข้อความเตือนผู้ใช้
-- Signout.vue </br> ส่วนของการ signout ออกจากระบบ
-- Signup.vue </br> ส่วนของการ POST ข้อมูลไปยัง db.json โดยจะทำการ GET ข้อมูลมาจาก db.json เพื่อเช็คว่าความถูกต้องของข้อมูลชื่อ username ที่ทำการระบุมาจาก Component AppSigup ที่ทำการส่ง emit มา ว่ามีอยู่ใน db.json แล้วหรือยัง 
-- Leaderboard.vue </br> หน้าตาการจัดลำดับของผู้เล่นทุกคน โดยทำการ GET ข้อมูลจาก db.json และทำการ sort ข้อมูลตามจำนวน Points ของผู้เล่นจากมากไปน้อย
-- EditAccount.vue  </br> เป็นในส่วนของหน้าที่สามารถ UPDATE และ DELETE ข้อมูลของผู้เล่น โดยสามารถเปลี่ยนได้ทั้ง Display name และ User name หรือจะทำการลบ Account 
+- <strong>Home.vue</strong> </br>  หน้าแรกของตัวเว็บไซต์
+- <strong>Pokdeng.vue</strong> </br> ส่วนหน้าตาของเกม Pokdeng โดยจะมีการ Update point ไปยัง db.json ของผู้เล่นเมื่อกดเริ่มเกมและจบเกม
+- <strong>Signin.vue</strong> </br> ส่วนของการ GET ข้อมูลของ User จาก db.json เพื่อนำข้อมูลมาเช็คกับข้อมูลจาก Component AppSignin ที่ทำการส่ง emit มา ก่อนการ Sign in เข้าสู่ระบบ โดยถ้าชื่อหรือรหัสผ่านผิดจะทำการส่ง status การ login ไปยัง Component AppSignin เพื่อโชว์ข้อความเตือนผู้ใช้
+- <strong>Signout.vue</strong> </br> ส่วนของการ signout ออกจากระบบ
+- <strong>Signup.vue</strong> </br> ส่วนของการ POST ข้อมูลไปยัง db.json โดยจะทำการ GET ข้อมูลมาจาก db.json เพื่อเช็คว่าความถูกต้องของข้อมูลชื่อ username ที่ทำการระบุมาจาก Component AppSigup ที่ทำการส่ง emit มา ว่ามีอยู่ใน db.json แล้วหรือยัง 
+- <strong>Leaderboard.vue</strong> </br> หน้าตาการจัดลำดับของผู้เล่นทุกคน โดยทำการ GET ข้อมูลจาก db.json และทำการ sort ข้อมูลตามจำนวน Points ของผู้เล่นจากมากไปน้อย
+- <strong>EditAccount.vue</strong>  </br> เป็นในส่วนของหน้าที่สามารถ UPDATE และ DELETE ข้อมูลของผู้เล่น โดยสามารถเปลี่ยนได้ทั้ง Display name และ User name หรือจะทำการลบ Account 
 ### Component
-- AppNavbar.vue </br> หน้าตาของ Navbar และจัดการเรื่องของการทำ router 
-- AppSignin.vue </br> ส่วนหน้าตาของการ Signin และทำการส่ง emit ข้อมูลต่างๆจากการที่ผู้ใช้กรอกกลับมาให้กับหน้า View Signin.vue
-- AppSignup.vue </br> ส่วนหน้าตาของ Signout และทำการส่ง emit ข้อมูลต่างๆจากการที่ผู้ใช้กรอกกลับมาให้กับหน้า View Signup.vue
-- bot.vue </br> เป็นส่วนของหน้าตาการ์ดของบอท 
-- card.vue </br> หน้าตาของการที่จะถูกสุ่มในเเต่ละใบ
-- player.vue </br> เป็นส่วนการ์ดของผู้เล่น
-- random.vue </br> ส่วนที่ทำการสุ่มเลขต่างๆ รวมไปถึงการ compare ของเกม
+- <strong>AppNavbar.vue</strong> </br> หน้าตาของ Navbar และจัดการเรื่องของการทำ router 
+- <strong>AppSignin.vue</strong> </br> ส่วนหน้าตาของการ Signin และทำการส่ง emit ข้อมูลต่างๆจากการที่ผู้ใช้กรอกกลับมาให้กับหน้า View Signin.vue
+- <strong>AppSignup.vue</strong> </br> ส่วนหน้าตาของ Signout และทำการส่ง emit ข้อมูลต่างๆจากการที่ผู้ใช้กรอกกลับมาให้กับหน้า View Signup.vue
+- <strong>bot.vue</strong> </br> เป็นส่วนของหน้าตาการ์ดของบอท 
+- <strong>card.vue</strong> </br> หน้าตาของการที่จะถูกสุ่มในเเต่ละใบ
+- <strong>player.vue</strong> </br> เป็นส่วนการ์ดของผู้เล่น
+- <strong>random.vue</strong> </br> ส่วนที่ทำการสุ่มเลขต่างๆ รวมไปถึงการ compare ของเกม
 
 # Vue 3 + Vite     ![This is an image](https://github.com/thanakritcankha/sec-1-group-5-kashino125/blob/main/public/favicon.ico)
 This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
