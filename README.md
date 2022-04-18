@@ -8,7 +8,7 @@
 
 ### ขั้นตอนการใช้งานแบบ Anonymous
 <p align="center">
- <img src="" />
+ <img src="https://user-images.githubusercontent.com/68856607/163741714-2e879096-1251-4c7a-bb95-3ff9d08d19bb.gif" />
 </p>
 
 ### ขั้นตอนการใช้งานแบบสมัครสมาชิก
